@@ -25,56 +25,52 @@ function place_ladder(ladder_slot)
 end
 
 
-function place_current_level()
-
-
+function place_current_level(cobble_stone_slot, ladder_slot)
+    local cobble_stone_placed = place_cobblestone(cobble_stone_slot)       
+    if (cobble_stone_placed) then
+      place_ladder(ladder_slot)  
+    end 
 end
 
 
 
 function main(tower_height)
 
+  -- Init
   local cobble_stone_slot = find_item_slot("minecraft:cobblestone")
   local ladder_slot = find_item_slot("minecraft:ladder")
   local fuel_level = turtle.getFuelLevel()
+  local up_count = 1
   
-  
-  if ladder_slot == nil or cobble_stone_slot == nil and fuel_level < 250 then 
+  --Init 
+  if ladder_slot == nil or cobble_stone_slot == nil and fuel_level < 200 then 
     print("Missing Required Materials: cobble stone or ladders or fuel")
     return  
   end
-  
-  --Todo: check for all required Materials based on tower current_height - NO
 
-  
-  
-	local cobble_stone_placed = false
-  
-   
-  if ladder_slot ~= nil and cobble_stone_slot ~= nil then
-    print("Missing Required Materials: cobble stone and ladders")
+  --build tower
+  for current_height=1,tower_height do
+    place_current_level(cobble_stone_slot, ladder_slot)   
+    turtle.up()
+    up_count = up_count + 1  
+    cobble_stone_slot = find_item_slot("minecraft:cobblestone")
+    ladder_slot = find_item_slot("minecraft:ladder")         
   end
+
+  --Build Tower Top
+  turtle.forward()
+  place_cobblestone(cobble_stone_slot)
   
-    for current_height=1,tower_height do
-      
-    end
+  --Return to Bottom
+  turtle.back()
+  turtle.back()  
+  for down=1,up_count do
+    turtle.down()    
+  end
     
-  end
-  
-   		
-
-    cobble_stone_placed = place_cobblestone(cobble_stone_slot)       
     
-    if (cobble_stone_placed) then
-      place_ladder(ladder_slot)  
-    end   
-  end
+end
   
-  turtle.up()
   
-  turtle.down()
-       
-end		
-
-
-main()
+local args = { ... }
+main(args[1])
