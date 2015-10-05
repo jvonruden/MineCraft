@@ -37,10 +37,16 @@ print("")
 
 while true do
 
-  local event, key = os.pullEvent( "key" ) -- limit os.pullEvent to the 'key' event
+  local event, key = os.pullEvent( "key" )
 
   if  keys.getName( key )  == "one" then
     os.run({}, "nosnet/ComputerCraft/NosNetApps/Info/etanks.lua")
     break
   end
+
+  if  keys.getName( key )  == "two" then
+    os.run({}, "nosnet/ComputerCraft/NosNetApps/Info/nosfuel.lua")
+    break
+  end
+
 end
