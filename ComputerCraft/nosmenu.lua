@@ -1,6 +1,6 @@
 
 term.clear()
-
+term.setCursorPos(1,1)
 local ascii = [[
 _   _  ___  ____             _
 | \ | |/ _ \/ ___| _ __   ___| |_
@@ -27,6 +27,7 @@ local event, key = os.pullEvent( "key" )
 
 
 term.clear()
+term.setCursorPos(1,1)
 term.setTextColor( colors.red )
 print("*** General Info ****")
 print("1. EnderTank Assignments")
@@ -38,8 +39,8 @@ while true do
 
   local event, key = os.pullEvent( "key" ) -- limit os.pullEvent to the 'key' event
 
-  if  keys.getName( key )  == "1" then
-    os.run({}, "nosnet/ComputerCraft/NosNetApps/Info/etanks")
+  if  keys.getName( key )  == "one" then
+    os.run({}, "nosnet/ComputerCraft/NosNetApps/Info/etanks.lua")
     break
   end
 end
