@@ -41,8 +41,7 @@ function main(tower_height)
   local ladder_slot = find_item_slot("minecraft:ladder")
   local fuel_level = turtle.getFuelLevel()
   local up_count = 1
-  
-  --Init 
+ 
   if ladder_slot == nil or cobble_stone_slot == nil and fuel_level < 200 then 
     print("Missing Required Materials: cobble stone or ladders or fuel")
     return  
