@@ -7,6 +7,15 @@ _   _  ___  ____             _
 |  \| | | | \___ \| '_ \ / _ \ __|
 | |\  | |_| |___) | | | |  __/ |_
 |_| \_|\___/|____/|_| |_|\___|\__|
-                                  
+
 ]]
+
+term.setTextColor( colors.red )
 print(ascii)
+
+term.setTextColor( colors.green )
+print("")
+print("I love the smell of NOS is the morning")
+print("")
+term.setTextColor( colors.yellow )
+print("Hit any key to continue")
