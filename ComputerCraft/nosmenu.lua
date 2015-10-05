@@ -13,6 +13,12 @@ _   _  ___  ____             _
 term.setTextColor( colors.red )
 print(ascii)
 
+
+monitor = peripheral.wrap("top")
+monitor.setCursorPos(1, 1)
+monitor.write(ascii)
+
+
 term.setTextColor( colors.green )
 print("")
 print("I love the smell of NOS is the morning")
