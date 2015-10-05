@@ -19,17 +19,7 @@ print("I love the smell of NOS is the morning")
 print("")
 print("")
 term.setTextColor( colors.yellow )
-print("Hit any key to continue")
-print("")
 
-
-local event, key = os.pullEvent( "key" )
-
-
-term.clear()
-term.setCursorPos(1,1)
-term.setTextColor( colors.red )
-print("*** General Info ****")
 print("1. EnderTank Assignments")
 print("2. NosFUEL Information")
 print("")

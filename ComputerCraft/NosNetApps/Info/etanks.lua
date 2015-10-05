@@ -1,4 +1,5 @@
 term.clear()
+term.setCursorPos(1,1)
 term.setTextColor( colors.green )
 print("*** EnderTank Assignments ****")
 print("astrocreep - dark blue | light blue")

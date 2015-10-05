@@ -1,5 +1,6 @@
 term.clear()
 term.setTextColor( colors.green )
+term.setCursorPos(1,1)
 
 local content = [[
 
