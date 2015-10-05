@@ -20,14 +20,7 @@ print("I love the smell of NOS is the morning")
 print("")
 print("")
 term.setTextColor( colors.yellow )
-print("Hit any key to continue")
+print("Hit e to continue")
 
 
-while true do
-
-  local event, key = os.pullEvent( "key" ) -- limit os.pullEvent to the 'key' event  
-  if key == keys.e then -- if the key pressed was 'e'
-
-    break
-  end
-end
+local event, key = os.pullEvent( "key" )
