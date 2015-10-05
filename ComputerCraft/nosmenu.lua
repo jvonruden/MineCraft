@@ -16,8 +16,16 @@ print(ascii)
 
 monitor = peripheral.wrap("top")
 monitor.setCursorPos(1, 1)
-monitor.write(ascii)
-
+monitor.setTextColor( colors.red )
+monitor.write("_   _  ___  ____             _")
+monitor.setTextColor( colors.green )
+monitor.write("| \ | |/ _ \/ ___| _ __   ___| |_")
+monitor.setTextColor( colors.blue )
+monitor.write("|  \| | | | \___ \| '_ \ / _ \ __|")
+monitor.setTextColor( colors.yellow )
+monitor.write("| |\  | |_| |___) | | | |  __/ |_")
+monitor.setTextColor( colors.red )
+monitor.write("|_| \_|\___/|____/|_| |_|\___|\__|")
 
 term.setTextColor( colors.green )
 print("")
