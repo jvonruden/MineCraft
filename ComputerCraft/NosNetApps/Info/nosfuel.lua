@@ -21,4 +21,3 @@ etc...
 textutils.pagedPrint(content)
 
 local event, key = os.pullEvent( "key" )
-os.run({}, "nosnet/ComputerCraft/nosmenu.lua")

@@ -8,4 +8,3 @@ print("capuel - blue | black")
 print("")
 
 local event, key = os.pullEvent( "key" )
-os.run({}, "nosnet/ComputerCraft/nosmenu.lua")
